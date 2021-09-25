@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  mariadb:
+    image: "mariadb:latest"
+    restart: 'always'
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
+      - /var/docker/mariadb/conf:/etc/mysql
+    ports:
+       - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "mail_track"
+      MYSQL_USER: "mail_track"
+      MYSQL_PASSWORD: "password"
